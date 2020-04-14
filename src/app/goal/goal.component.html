@@ -1,7 +1,8 @@
 <div class="container">
+  <ng-progress></ng-progress>
     <h1>WELCOME TO THE WORDS OF THE WISE!</h1>
     <hr>
-  
+
     <div class="row">
       <div class="col-md-6">
         <div *ngFor='let goal of goals;let i = index'>
@@ -19,5 +20,11 @@
         <app-goal-form (addGoal)="addNewGoal($event)"></app-goal-form>
    </div>
     </div>
-    <p *ngIf='goals.length > 5'>FOOD FOR THOUGHT.</p>
+    <p *ngIf='goals.length > 5'>You have too many goals</p>
+    <div class="row">
+      <blockquote class="blockquote text-center">
+        <p class="mb-0">{{quote.quote}}</p>
+        <footer class="blockquote-footer"><cite>{{quote.author}}</cite></footer>
+      </blockquote>
+    </div>
   </div>
